@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CrudOperation.Models
 {
@@ -28,6 +29,13 @@ namespace CrudOperation.Models
 
 		[Required]
 		public DateTime EndrollementDate { get; set; }
+
+
+        public int DepartmentId { get; set; }
+
+        //Navigation Property : each student belongs to one department
+        [ForeignKey("DepartmentId")]
+		public Department? Department { get; set; }
 
 
 	}

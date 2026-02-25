@@ -4,6 +4,7 @@ using CrudOperation.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrudOperation.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260225074451_InitialSeed")]
+    partial class InitialSeed
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -102,7 +104,7 @@ namespace CrudOperation.Migrations
                             Course = "Computer Science",
                             DepartmentId = 1,
                             Email = "alice@mail.com",
-                            EndrollementDate = new DateTime(2026, 2, 25, 14, 55, 46, 700, DateTimeKind.Local).AddTicks(6750),
+                            EndrollementDate = new DateTime(2026, 2, 25, 13, 29, 51, 206, DateTimeKind.Local).AddTicks(7720),
                             Name = "Alice"
                         },
                         new
@@ -111,7 +113,7 @@ namespace CrudOperation.Migrations
                             Course = "Physics",
                             DepartmentId = 2,
                             Email = "bob@mail.com",
-                            EndrollementDate = new DateTime(2026, 2, 25, 14, 55, 46, 700, DateTimeKind.Local).AddTicks(6780),
+                            EndrollementDate = new DateTime(2026, 2, 25, 13, 29, 51, 206, DateTimeKind.Local).AddTicks(7750),
                             Name = "Bob"
                         });
                 });

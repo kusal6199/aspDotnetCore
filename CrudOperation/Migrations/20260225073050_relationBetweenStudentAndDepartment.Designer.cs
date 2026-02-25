@@ -4,6 +4,7 @@ using CrudOperation.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrudOperation.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260225073050_relationBetweenStudentAndDepartment")]
+    partial class relationBetweenStudentAndDepartment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,26 +43,6 @@ namespace CrudOperation.Migrations
                     b.HasKey("DepartmentId");
 
                     b.ToTable("Departments");
-
-                    b.HasData(
-                        new
-                        {
-                            DepartmentId = 1,
-                            HOD = "Raman",
-                            Name = "IT"
-                        },
-                        new
-                        {
-                            DepartmentId = 2,
-                            HOD = "Hitesh",
-                            Name = "Science"
-                        },
-                        new
-                        {
-                            DepartmentId = 3,
-                            HOD = "Hari",
-                            Name = "Management"
-                        });
                 });
 
             modelBuilder.Entity("CrudOperation.Models.Student", b =>
@@ -94,26 +76,6 @@ namespace CrudOperation.Migrations
                     b.HasIndex("DepartmentId");
 
                     b.ToTable("Students");
-
-                    b.HasData(
-                        new
-                        {
-                            StudentId = 1,
-                            Course = "Computer Science",
-                            DepartmentId = 1,
-                            Email = "alice@mail.com",
-                            EndrollementDate = new DateTime(2026, 2, 25, 14, 55, 46, 700, DateTimeKind.Local).AddTicks(6750),
-                            Name = "Alice"
-                        },
-                        new
-                        {
-                            StudentId = 2,
-                            Course = "Physics",
-                            DepartmentId = 2,
-                            Email = "bob@mail.com",
-                            EndrollementDate = new DateTime(2026, 2, 25, 14, 55, 46, 700, DateTimeKind.Local).AddTicks(6780),
-                            Name = "Bob"
-                        });
                 });
 
             modelBuilder.Entity("CrudOperation.Models.Student", b =>
